@@ -1,0 +1,13 @@
+.track-divs{
+    height: 40px;
+    width: 40px;
+    background-image: url(./images/horse1-08.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.blank{
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgb(207, 207, 207);
+}
