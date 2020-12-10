@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(244, 244, 244);
+}
+
+.main-container{
+    height: 100vh;
+  }
+
+.info-game{
+    box-shadow: 10px 10px 10px rgb(222, 222, 222);
+    border-radius: 12px;
+}
+
+.logo{
+    height: 200px;
+}
+
+.text-info-game {
+    color: rgb(76, 75, 75);
+    margin: 0px;
+}
+
+.btn-start-game{
+    background-color: rgb(179, 179, 179);
+    color:white;
+    width: 200px;
+    border-radius: 12px;
+}
+
+.btn-start-game :Hover {
+
+}

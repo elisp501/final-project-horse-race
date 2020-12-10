@@ -1,0 +1,40 @@
+.horse{
+    width: 120px;
+    animation-timing-function: linear;
+    animation-name: horse;
+    animation-duration: 12s;
+    position: relative;
+}
+
+.track{
+  min-height: 100px;
+}
+
+.all-tracks-hidden {
+  display: none;
+}
+
+.track-hidden {
+  display: none;
+}
+
+.track-active {
+  display: block;
+}
+
+.horse-hidden {
+  display: none;
+}
+
+@keyframes horse {
+
+  0% {
+      transform: translate(0,0);
+    }
+    100% {
+        transform: translate(1000px,0);
+    }
+  }
+
+  
+  
