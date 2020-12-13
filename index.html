@@ -1,27 +1,225 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Styles -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-     <link rel="stylesheet" href="./styles/page1.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
     <title>Horse race</title>
 </head>
+
 <body>
-    <div class="main-container container d-flex align-items-center justify-content-center">
-        <div class="col-6">
-            <div class="info-game card row pb-4 align-items-center border-0">
-                <img src="./styles/images/logo.svg" alt="Logo" class="logo">
-                <!-- <p class="text-info-game">¡Diviertete apostandole a los diferentes caballos!</p>
-                <p class="text-info-game"> <small>Nosotros te decimos quien paga.</small></p> -->
-                <button class="btn-start-game btn">Jugar</button>
+    <!-------------------------------- Pagina 1 -------------------------------->
+    <div class="page1-background display-block" id="page1">
+        <h1></h1>
+        <div class="main-container container d-flex align-items-center justify-content-center">
+            <div class="col-6">
+                <div class="info-game card row pb-4 align-items-center border-0">
+                    <img src="./styles/images/logo.svg" alt="Logo" class="logo">
+                    <div class="input-group-custom input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">¿Cuantas personas van a
+                                jugar?</span>
+                        </div>
+                        <input type="number" class="form-control" aria-label="Small"
+                            aria-describedby="inputGroup-sizing-sm" id="how-many-horses">
+                    </div>
+                    <button onclick="addNumber()" class="btn-start-game btn">Jugar</button>
+                    <!-- <button onclick="a()">Prueba</button> -->
+                </div>
             </div>
         </div>
     </div>
 
+    <!-------------------------------- Pagina 2 -------------------------------->
+    <div class="page2-background display-block" id="page2">
+        <div id="carouselExampleControls" class="carousel-custom carousel slide" data-ride="carousel">
+            <div class="carousel-inner p-4">
+                <div class="carousel-item active">
+                    <!-- inicio card cabbalo 1-->
+                    <div class="card-cusomt card border-0" style="width: 23rem;">
+                        <img class="card-img-top horse-image" src="styles/images/horse1.svg" alt="Card image cap">
+                        <div class="card-body text-center">
+                            <h2 class="card-title" id="idName1"></h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Peso:</li>
+                                    <li class="list-group-item">Raza:</li>
+                                    <li class="list-group-item">Velocidad:</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" id="idWeightH1"></li>
+                                    <li class="list-group-item" id="idBreedH1"></li>
+                                    <li class="list-group-item" id="idSpeedH1"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn-choose-horse btn" onclick="chooseHorse1()" id="chooseHorse1">Elegir
+                                caballo</button>
+                            <button class="btn-bet-horse btn btn-disabled" id="betOnHorse1">Apostarle a este
+                                caballo</button>
+                        </div>
+                    </div>
+                    <!-- fin card cabbalo 1-->
+                </div>
+                <div class="carousel-item">
+                    <!-- inicio card cabbalo 2-->
+                    <div class="card-cusomt card border-0" style="width: 23rem;">
+                        <img class="card-img-top horse-image" src="styles/images/horse1.svg" alt="Card image cap">
+                        <div class="card-body text-center">
+                            <h2 class="card-title" id="idName2"></h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Peso:</li>
+                                    <li class="list-group-item">Raza:</li>
+                                    <li class="list-group-item">Velocidad:</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" id="idWeightH2"></li>
+                                    <li class="list-group-item" id="idBreedH2"></li>
+                                    <li class="list-group-item" id="idSpeedH2"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn-choose-horse btn" onclick="chooseHorse2()" id="chooseHorse2">Elegir
+                                caballo</button>
+                            <button class="btn-bet-horse btn btn-disabled" id="betOnHorse2">Apostarle a este
+                                caballo</button>
+                        </div>
+                    </div>
+                    <!-- fin card cabbalo 2-->
+                </div>
+                <div class="carousel-item">
+                    <!-- inicio card cabbalo 3-->
+                    <div class="card-cusomt card border-0" style="width: 23rem;">
+                        <img class="card-img-top horse-image" src="styles/images/horse1.svg" alt="Card image cap">
+                        <div class="card-body text-center">
+                            <h2 class="card-title" id="idName3"></h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Peso:</li>
+                                    <li class="list-group-item">Raza:</li>
+                                    <li class="list-group-item">Velocidad:</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" id="idWeightH3"></li>
+                                    <li class="list-group-item" id="idBreedH3"></li>
+                                    <li class="list-group-item" id="idSpeedH3"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn-choose-horse btn" onclick="chooseHorse3()" id="chooseHorse3">Elegir
+                                caballo</button>
+                            <button class="btn-bet-horse btn btn-disabled" id="betOnHorse3">Apostarle a este
+                                caballo</button>
+                        </div>
+                    </div>
+                    <!-- fin card cabbalo 3-->
+                </div>
+                <div class="carousel-item">
+                    <!-- inicio card cabbalo 4-->
+                    <div class="card-cusomt card border-0" style="width: 23rem;">
+                        <img class="card-img-top horse-image" src="styles/images/horse1.svg" alt="Card image cap">
+                        <div class="card-body text-center">
+                            <h2 class="card-title" id="idName4"></h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Peso:</li>
+                                    <li class="list-group-item">Raza:</li>
+                                    <li class="list-group-item">Velocidad:</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" id="idWeightH4"></li>
+                                    <li class="list-group-item" id="idBreedH4"></li>
+                                    <li class="list-group-item" id="idSpeedH4"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn-choose-horse btn" onclick="chooseHorse4()" id="chooseHorse4">Elegir
+                                caballo</button>
+                            <button class="btn-bet-horse btn btn-disabled" id="betOnHorse4">Apostarle a este
+                                caballo</button>
+                        </div>
+                    </div>
+                    <!-- fin card cabbalo 4-->
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="arrow carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="arrow carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+                <button class="btn-ir-pista btn btn-danger" onclick="goToTracks()">Ir a la pista</button>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------- Pagina 3 -------------------------------->
+    <div class="page3-background col display-none" id="page3">
+        <div class="all-tracks-hidden all-tracks-custom">
+            <!-- Caballo 1 -->
+            <div id="track1" class="track1 row track track-hidden">
+                <div class="horse-in-track" id="track">
+                    <img src="" alt="" class="horse horse1" id="horse1">
+                </div>
+            </div>
+            <!-- Caballo 2 -->
+            <div id="track2" class="track2 row mt-3 track track-hidden ">
+                <div class="row " id="track">
+                    <img src="" alt="" class="horse horse2" id="horse2">
+                </div>
+            </div>
+            <!-- Caballo 3 -->
+            <div id="track3" class="track3 row mt-3 track track-hidden  ">
+                <div class="row " id="track">
+                    <img src="" alt="" class="horse horse3" id="horse3">
+                </div>
+            </div>
+            <!-- Caballo 4 -->
+            <div id="track4" class="track4 row mt-3 track track-hidden  ">
+                <div class="row " id="track">
+                    <img src="" alt="" class="horse horse4" id="horse4">
+                </div>
+            </div>
+        </div>
+        <button id="startButton" onclick="fstartButton()" class="row btn btn-empezar-carrera2 btn-danger">Empezar carrera</button>
+    </div>
+
+<!-------------------------------- Pagina 4 -------------------------------->
+<div class="page4-background display-none" id="page4">
+    <p class="bg-info m-5 p-3" id="winners"></p>
+</div>
     <!------------- scripts ------------->
-    <script src="scriptP3.js"></script>
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -29,4 +227,5 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
